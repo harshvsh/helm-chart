@@ -3,12 +3,12 @@ entries:
   ssm-service:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-04-28T14:53:16.334189-04:00"
-    description: A Helm chart for Kubernetes
-    digest: 0650ab2ca768f32c94e97f912cf23c9efb153b14821b5357ca2218f045d0d522
+    created: "2021-04-28T16:16:11.695675-04:00"
+    description: A Helm chart for a Software Security Module
+    digest: e3148b068fe386807eede066d5a1d8c80421c511c3dec9402f4e4eedfa1050f1
     name: ssm-service
     type: application
     urls:
     - https://dperaza4dustbit.github.io/helm-chart/ssm-service-0.1.0.tgz
     version: 0.1.0
-generated: "2021-04-28T14:53:16.333254-04:00"
+generated: "2021-04-28T16:16:11.694686-04:00"
