@@ -8,9 +8,25 @@ entries:
       charts.openshift.io/supportURL: https://github.com/dperaza4dustbit/helm-chart
     apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-17T10:18:38.925564-04:00"
+    created: "2021-05-20T16:52:24.929896-04:00"
     description: A Helm chart for a RedHat Certified PSQL
-    digest: ff5669255b229aa006716832c2abc6fd1f6e6866ecfed47968e905ea201332e8
+    digest: ed25d28a24549bc88fdae7dac2a705a0f3937dd27b068c77e89c37f0d6d085bc
+    kubeVersion: 1.20.0
+    name: psql-service
+    type: application
+    urls:
+    - https://dperaza4dustbit.github.io/helm-chart/psql-service-0.1.8.tgz
+    version: 0.1.8
+  - annotations:
+      charts.openshift.io/archs: x86_64
+      charts.openshift.io/name: PSQL RedHat Demo Chart
+      charts.openshift.io/provider: RedHat
+      charts.openshift.io/supportURL: https://github.com/dperaza4dustbit/helm-chart
+    apiVersion: v2
+    appVersion: 10.0.0
+    created: "2021-05-20T16:52:24.928173-04:00"
+    description: A Helm chart for a RedHat Certified PSQL
+    digest: fedd8dd82d90882411fb9edcc930af10509af51c58eb4ce9b03cc797b6f3bac9
     kubeVersion: 1.20.0
     name: psql-service
     type: application
@@ -24,7 +40,7 @@ entries:
       charts.openshift.io/supportURL: https://github.com/dperaza4dustbit/helm-chart
     apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-17T10:18:38.92473-04:00"
+    created: "2021-05-20T16:52:24.9265-04:00"
     description: A Helm chart for a RedHat Certified PSQL
     digest: ee6c02e91f68cc3f1ab4d6eca1f84d1c372bdfbb17fa90b148e4eae6f3e87a11
     kubeVersion: 1.20.0
@@ -35,7 +51,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-17T10:18:38.92366-04:00"
+    created: "2021-05-20T16:52:24.925222-04:00"
     description: A Helm chart for a RedHat Certified PSQL
     digest: 657e1cf44e6124c4646c673b324ec85a8d80bab6046d0a53535c8e1aef2bd12b
     kubeVersion: 1.20.0
@@ -52,7 +68,7 @@ entries:
       charts.openshift.io/supportURL: https://github.com/dperaza4dustbit/helm-chart
     apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-17T10:18:38.926249-04:00"
+    created: "2021-05-20T16:52:24.931016-04:00"
     description: A Helm chart for a RedHat Certified PSQL
     digest: 50e82624860387e96e4b6fca07213eac762341b8f5360d11efabc0b01a7804d6
     kubeVersion: 1.20.0
@@ -69,7 +85,7 @@ entries:
       charts.openshift.io/supportURL: https://github.com/dperaza4dustbit/helm-chart
     apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-17T10:18:38.926907-04:00"
+    created: "2021-05-20T16:52:24.93212-04:00"
     description: A Helm chart for a RedHat Certified PSQL
     digest: 496ca40d2d475e3e4d52e22e84561d9683197d852bd6d8d6f1093eae52be065e
     kubeVersion: 1.20.0
@@ -86,7 +102,7 @@ entries:
       charts.openshift.io/supportURL: https://github.com/dperaza4dustbit/helm-chart
     apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-05-17T10:18:38.927642-04:00"
+    created: "2021-05-20T16:52:24.933277-04:00"
     description: A Helm chart for a RedHat Certified PSQL
     digest: ffc46490ab2d903bfbcf17b67aebd9ac1227bf515bc6c86c9e3025945b1fb3e8
     kubeVersion: 1.20.0
@@ -98,9 +114,9 @@ entries:
   ssm-service:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-17T10:18:38.930245-04:00"
+    created: "2021-05-20T16:52:24.936768-04:00"
     description: A Helm chart for a Software Security Module
-    digest: bb2f9411d14314d1a2426523aa1cd2bd2d5ad47b6ceab8d100414f2a38e8a535
+    digest: 4a4a8d6d7be01753c0245e764bffa904a249b2d9489009bf9c4e40b2f82f6268
     name: ssm-service
     type: application
     urls:
@@ -108,7 +124,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-17T10:18:38.929622-04:00"
+    created: "2021-05-20T16:52:24.93562-04:00"
     description: A Helm chart for a Software Security Module
     digest: b8d0958b495a20ec0331f9ce73f9de474b53e61d465834daa6108fec311bb03d
     name: ssm-service
@@ -118,7 +134,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-17T10:18:38.928666-04:00"
+    created: "2021-05-20T16:52:24.93436-04:00"
     description: A Helm chart for a Software Security Module
     digest: e3148b068fe386807eede066d5a1d8c80421c511c3dec9402f4e4eedfa1050f1
     name: ssm-service
@@ -129,7 +145,7 @@ entries:
   ssm-service-plus-db:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-17T10:18:38.9321-04:00"
+    created: "2021-05-20T16:52:24.939955-04:00"
     dependencies:
     - name: psql-service1
       repository: https://dperaza4dustbit.github.io/helm-chart/
@@ -147,4 +163,4 @@ entries:
     urls:
     - https://dperaza4dustbit.github.io/helm-chart/ssm-service-plus-db-0.1.2.tgz
     version: 0.1.2
-generated: "2021-05-17T10:18:38.922296-04:00"
+generated: "2021-05-20T16:52:24.923693-04:00"

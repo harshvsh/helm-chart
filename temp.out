@@ -1,0 +1,2348 @@
+[
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "annotations": {
+        "helm.sh/hook": "test-success",
+        "k8s.v1.cni.cncf.io/network-status": "[{\n    \"name\": \"\",\n    \"interface\": \"eth0\",\n    \"ips\": [\n        \"10.217.0.55\"\n    ],\n    \"default\": true,\n    \"dns\": {}\n}]",
+        "k8s.v1.cni.cncf.io/networks-status": "[{\n    \"name\": \"\",\n    \"interface\": \"eth0\",\n    \"ips\": [\n        \"10.217.0.55\"\n    ],\n    \"default\": true,\n    \"dns\": {}\n}]",
+        "openshift.io/scc": "anyuid"
+      },
+      "creationTimestamp": "2021-05-17T10:41:54Z",
+      "managedFields": [
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                ".": {},
+                "f:helm.sh/hook": {}
+              }
+            },
+            "f:spec": {
+              "f:containers": {
+                "k:{\"name\":\"psql-service-3s8m9m1k3k-credentials-test\"}": {
+                  ".": {},
+                  "f:command": {},
+                  "f:env": {
+                    ".": {},
+                    "k:{\"name\":\"PGPASSWORD\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    },
+                    "k:{\"name\":\"POSTGRESQL_DATABASE\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    },
+                    "k:{\"name\":\"POSTGRESQL_USER\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    }
+                  },
+                  "f:image": {},
+                  "f:imagePullPolicy": {},
+                  "f:name": {},
+                  "f:resources": {},
+                  "f:terminationMessagePath": {},
+                  "f:terminationMessagePolicy": {}
+                }
+              },
+              "f:dnsPolicy": {},
+              "f:enableServiceLinks": {},
+              "f:restartPolicy": {},
+              "f:schedulerName": {},
+              "f:securityContext": {
+                ".": {},
+                "f:seLinuxOptions": {
+                  "f:level": {}
+                }
+              },
+              "f:terminationGracePeriodSeconds": {}
+            }
+          },
+          "manager": "Go-http-client",
+          "operation": "Update",
+          "time": "2021-05-17T10:41:54Z"
+        },
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                "f:k8s.v1.cni.cncf.io/network-status": {},
+                "f:k8s.v1.cni.cncf.io/networks-status": {}
+              }
+            }
+          },
+          "manager": "multus",
+          "operation": "Update",
+          "time": "2021-05-17T10:41:56Z"
+        },
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:status": {
+              "f:conditions": {
+                "k:{\"type\":\"ContainersReady\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Initialized\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Ready\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              },
+              "f:containerStatuses": {},
+              "f:hostIP": {},
+              "f:phase": {},
+              "f:podIP": {},
+              "f:podIPs": {
+                ".": {},
+                "k:{\"ip\":\"10.217.0.55\"}": {
+                  ".": {},
+                  "f:ip": {}
+                }
+              },
+              "f:startTime": {}
+            }
+          },
+          "manager": "kubelet",
+          "operation": "Update",
+          "time": "2021-05-17T10:41:57Z"
+        }
+      ],
+      "name": "psql-service-3s8m9m1k3k-credentials-test",
+      "namespace": "davptest",
+      "resourceVersion": "1998434",
+      "selfLink": "/api/v1/namespaces/davptest/pods/psql-service-3s8m9m1k3k-credentials-test",
+      "uid": "71fd981e-f452-4bff-879e-08ef9da49867"
+    },
+    "spec": {
+      "containers": [
+        {
+          "command": [
+            "/bin/bash",
+            "-ec",
+            "psql -d $POSTGRESQL_DATABASE -h psql -p $PSQL_SERVICE_PORT -U $POSTGRESQL_USER -c \"select 1\"\n"
+          ],
+          "env": [
+            {
+              "name": "POSTGRESQL_USER",
+              "value": "dperaza"
+            },
+            {
+              "name": "PGPASSWORD",
+              "value": "quebolasere"
+            },
+            {
+              "name": "POSTGRESQL_DATABASE",
+              "value": "helmrocks"
+            }
+          ],
+          "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7:latest",
+          "imagePullPolicy": "IfNotPresent",
+          "name": "psql-service-3s8m9m1k3k-credentials-test",
+          "resources": {},
+          "securityContext": {
+            "capabilities": {
+              "drop": [
+                "MKNOD"
+              ]
+            }
+          },
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "volumeMounts": [
+            {
+              "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+              "name": "default-token-wnjwl",
+              "readOnly": true
+            }
+          ]
+        }
+      ],
+      "dnsPolicy": "ClusterFirst",
+      "enableServiceLinks": true,
+      "imagePullSecrets": [
+        {
+          "name": "default-dockercfg-6hbvr"
+        }
+      ],
+      "nodeName": "crc-xl2km-master-0",
+      "preemptionPolicy": "PreemptLowerPriority",
+      "priority": 0,
+      "restartPolicy": "Never",
+      "schedulerName": "default-scheduler",
+      "securityContext": {
+        "seLinuxOptions": {
+          "level": "s0:c25,c5"
+        }
+      },
+      "serviceAccount": "default",
+      "serviceAccountName": "default",
+      "terminationGracePeriodSeconds": 30,
+      "tolerations": [
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        },
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        }
+      ],
+      "volumes": [
+        {
+          "name": "default-token-wnjwl",
+          "secret": {
+            "defaultMode": 420,
+            "secretName": "default-token-wnjwl"
+          }
+        }
+      ]
+    },
+    "status": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-17T10:41:54Z",
+          "reason": "PodCompleted",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-17T10:41:54Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-17T10:41:54Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "ContainersReady"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-17T10:41:54Z",
+          "status": "True",
+          "type": "PodScheduled"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "containerID": "cri-o://924665f8bb477cef3e76b4ae48cfb136e4bcb5cba40be3642750bbb4d419520a",
+          "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7:latest",
+          "imageID": "registry.access.redhat.com/rhscl/postgresql-10-rhel7@sha256:52a50e15a72989ee0ab84f2b4c0843439af099b2a78f4ef68bbe09e8b8e47989",
+          "lastState": {},
+          "name": "psql-service-3s8m9m1k3k-credentials-test",
+          "ready": false,
+          "restartCount": 0,
+          "started": false,
+          "state": {
+            "terminated": {
+              "containerID": "cri-o://924665f8bb477cef3e76b4ae48cfb136e4bcb5cba40be3642750bbb4d419520a",
+              "exitCode": 0,
+              "finishedAt": "2021-05-17T10:41:57Z",
+              "reason": "Completed",
+              "startedAt": "2021-05-17T10:41:57Z"
+            }
+          }
+        }
+      ],
+      "hostIP": "192.168.126.11",
+      "phase": "Succeeded",
+      "podIP": "10.217.0.55",
+      "podIPs": [
+        {
+          "ip": "10.217.0.55"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2021-05-17T10:41:54Z"
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "annotations": {
+        "helm.sh/hook": "test-success",
+        "k8s.v1.cni.cncf.io/network-status": "[{\n    \"name\": \"\",\n    \"interface\": \"eth0\",\n    \"ips\": [\n        \"10.217.0.66\"\n    ],\n    \"default\": true,\n    \"dns\": {}\n}]",
+        "k8s.v1.cni.cncf.io/networks-status": "[{\n    \"name\": \"\",\n    \"interface\": \"eth0\",\n    \"ips\": [\n        \"10.217.0.66\"\n    ],\n    \"default\": true,\n    \"dns\": {}\n}]",
+        "openshift.io/scc": "anyuid"
+      },
+      "creationTimestamp": "2021-05-14T12:32:04Z",
+      "managedFields": [
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                ".": {},
+                "f:helm.sh/hook": {}
+              }
+            },
+            "f:spec": {
+              "f:containers": {
+                "k:{\"name\":\"psql-service-87yesimog1-credentials-test\"}": {
+                  ".": {},
+                  "f:command": {},
+                  "f:env": {
+                    ".": {},
+                    "k:{\"name\":\"PGPASSWORD\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    },
+                    "k:{\"name\":\"POSTGRESQL_DATABASE\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    },
+                    "k:{\"name\":\"POSTGRESQL_USER\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    }
+                  },
+                  "f:image": {},
+                  "f:imagePullPolicy": {},
+                  "f:name": {},
+                  "f:resources": {},
+                  "f:terminationMessagePath": {},
+                  "f:terminationMessagePolicy": {}
+                }
+              },
+              "f:dnsPolicy": {},
+              "f:enableServiceLinks": {},
+              "f:restartPolicy": {},
+              "f:schedulerName": {},
+              "f:securityContext": {
+                ".": {},
+                "f:seLinuxOptions": {
+                  "f:level": {}
+                }
+              },
+              "f:serviceAccount": {},
+              "f:serviceAccountName": {},
+              "f:terminationGracePeriodSeconds": {}
+            }
+          },
+          "manager": "Go-http-client",
+          "operation": "Update",
+          "time": "2021-05-14T12:32:04Z"
+        },
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                "f:k8s.v1.cni.cncf.io/network-status": {},
+                "f:k8s.v1.cni.cncf.io/networks-status": {}
+              }
+            }
+          },
+          "manager": "multus",
+          "operation": "Update",
+          "time": "2021-05-14T12:32:06Z"
+        },
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:status": {
+              "f:conditions": {
+                "k:{\"type\":\"ContainersReady\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Initialized\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Ready\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              },
+              "f:containerStatuses": {},
+              "f:hostIP": {},
+              "f:phase": {},
+              "f:podIP": {},
+              "f:podIPs": {
+                ".": {},
+                "k:{\"ip\":\"10.217.0.66\"}": {
+                  ".": {},
+                  "f:ip": {}
+                }
+              },
+              "f:startTime": {}
+            }
+          },
+          "manager": "kubelet",
+          "operation": "Update",
+          "time": "2021-05-14T12:32:07Z"
+        }
+      ],
+      "name": "psql-service-87yesimog1-credentials-test",
+      "namespace": "davptest",
+      "resourceVersion": "1954301",
+      "selfLink": "/api/v1/namespaces/davptest/pods/psql-service-87yesimog1-credentials-test",
+      "uid": "6de5df24-9fd1-42ee-875c-a5493eaaa330"
+    },
+    "spec": {
+      "containers": [
+        {
+          "command": [
+            "/bin/bash",
+            "-ec",
+            "psql -d $POSTGRESQL_DATABASE -h psql -p $PSQL_SERVICE_PORT -U $POSTGRESQL_USER -c \"select 1\"\n"
+          ],
+          "env": [
+            {
+              "name": "POSTGRESQL_USER",
+              "value": "dperaza"
+            },
+            {
+              "name": "PGPASSWORD",
+              "value": "quebolasere"
+            },
+            {
+              "name": "POSTGRESQL_DATABASE",
+              "value": "helmrocks"
+            }
+          ],
+          "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7:latest",
+          "imagePullPolicy": "IfNotPresent",
+          "name": "psql-service-87yesimog1-credentials-test",
+          "resources": {},
+          "securityContext": {
+            "capabilities": {
+              "drop": [
+                "MKNOD"
+              ]
+            }
+          },
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "volumeMounts": [
+            {
+              "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+              "name": "sa-with-anyuid-token-xzsvr",
+              "readOnly": true
+            }
+          ]
+        }
+      ],
+      "dnsPolicy": "ClusterFirst",
+      "enableServiceLinks": true,
+      "imagePullSecrets": [
+        {
+          "name": "sa-with-anyuid-dockercfg-5vl27"
+        }
+      ],
+      "nodeName": "crc-xl2km-master-0",
+      "preemptionPolicy": "PreemptLowerPriority",
+      "priority": 0,
+      "restartPolicy": "Never",
+      "schedulerName": "default-scheduler",
+      "securityContext": {
+        "seLinuxOptions": {
+          "level": "s0:c25,c5"
+        }
+      },
+      "serviceAccount": "sa-with-anyuid",
+      "serviceAccountName": "sa-with-anyuid",
+      "terminationGracePeriodSeconds": 30,
+      "tolerations": [
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        },
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        }
+      ],
+      "volumes": [
+        {
+          "name": "sa-with-anyuid-token-xzsvr",
+          "secret": {
+            "defaultMode": 420,
+            "secretName": "sa-with-anyuid-token-xzsvr"
+          }
+        }
+      ]
+    },
+    "status": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-14T12:32:04Z",
+          "reason": "PodCompleted",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-14T12:32:04Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-14T12:32:04Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "ContainersReady"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-14T12:32:04Z",
+          "status": "True",
+          "type": "PodScheduled"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "containerID": "cri-o://8425eabd9cf8f1f9a87bb47c1f6e8f613d131baddcfa3c055329ebe22c65edd9",
+          "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7:latest",
+          "imageID": "registry.access.redhat.com/rhscl/postgresql-10-rhel7@sha256:52a50e15a72989ee0ab84f2b4c0843439af099b2a78f4ef68bbe09e8b8e47989",
+          "lastState": {},
+          "name": "psql-service-87yesimog1-credentials-test",
+          "ready": false,
+          "restartCount": 0,
+          "started": false,
+          "state": {
+            "terminated": {
+              "containerID": "cri-o://8425eabd9cf8f1f9a87bb47c1f6e8f613d131baddcfa3c055329ebe22c65edd9",
+              "exitCode": 0,
+              "finishedAt": "2021-05-14T12:32:07Z",
+              "reason": "Completed",
+              "startedAt": "2021-05-14T12:32:07Z"
+            }
+          }
+        }
+      ],
+      "hostIP": "192.168.126.11",
+      "phase": "Succeeded",
+      "podIP": "10.217.0.66",
+      "podIPs": [
+        {
+          "ip": "10.217.0.66"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2021-05-14T12:32:04Z"
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "annotations": {
+        "helm.sh/hook": "test-success",
+        "k8s.v1.cni.cncf.io/network-status": "[{\n    \"name\": \"\",\n    \"interface\": \"eth0\",\n    \"ips\": [\n        \"10.217.0.70\"\n    ],\n    \"default\": true,\n    \"dns\": {}\n}]",
+        "k8s.v1.cni.cncf.io/networks-status": "[{\n    \"name\": \"\",\n    \"interface\": \"eth0\",\n    \"ips\": [\n        \"10.217.0.70\"\n    ],\n    \"default\": true,\n    \"dns\": {}\n}]",
+        "openshift.io/scc": "anyuid"
+      },
+      "creationTimestamp": "2021-05-14T12:34:32Z",
+      "managedFields": [
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                ".": {},
+                "f:helm.sh/hook": {}
+              }
+            },
+            "f:spec": {
+              "f:containers": {
+                "k:{\"name\":\"psql-service-9j4d84rwsa-credentials-test\"}": {
+                  ".": {},
+                  "f:command": {},
+                  "f:env": {
+                    ".": {},
+                    "k:{\"name\":\"PGPASSWORD\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    },
+                    "k:{\"name\":\"POSTGRESQL_DATABASE\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    },
+                    "k:{\"name\":\"POSTGRESQL_USER\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    }
+                  },
+                  "f:image": {},
+                  "f:imagePullPolicy": {},
+                  "f:name": {},
+                  "f:resources": {},
+                  "f:terminationMessagePath": {},
+                  "f:terminationMessagePolicy": {}
+                }
+              },
+              "f:dnsPolicy": {},
+              "f:enableServiceLinks": {},
+              "f:restartPolicy": {},
+              "f:schedulerName": {},
+              "f:securityContext": {
+                ".": {},
+                "f:seLinuxOptions": {
+                  "f:level": {}
+                }
+              },
+              "f:serviceAccount": {},
+              "f:serviceAccountName": {},
+              "f:terminationGracePeriodSeconds": {}
+            }
+          },
+          "manager": "Go-http-client",
+          "operation": "Update",
+          "time": "2021-05-14T12:34:32Z"
+        },
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                "f:k8s.v1.cni.cncf.io/network-status": {},
+                "f:k8s.v1.cni.cncf.io/networks-status": {}
+              }
+            }
+          },
+          "manager": "multus",
+          "operation": "Update",
+          "time": "2021-05-14T12:34:34Z"
+        },
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:status": {
+              "f:conditions": {
+                "k:{\"type\":\"ContainersReady\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Initialized\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Ready\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              },
+              "f:containerStatuses": {},
+              "f:hostIP": {},
+              "f:phase": {},
+              "f:podIP": {},
+              "f:podIPs": {
+                ".": {},
+                "k:{\"ip\":\"10.217.0.70\"}": {
+                  ".": {},
+                  "f:ip": {}
+                }
+              },
+              "f:startTime": {}
+            }
+          },
+          "manager": "kubelet",
+          "operation": "Update",
+          "time": "2021-05-14T12:34:37Z"
+        }
+      ],
+      "name": "psql-service-9j4d84rwsa-credentials-test",
+      "namespace": "davptest",
+      "resourceVersion": "1954845",
+      "selfLink": "/api/v1/namespaces/davptest/pods/psql-service-9j4d84rwsa-credentials-test",
+      "uid": "0b6f64aa-f89e-40f3-8219-14f3e3f1b0e0"
+    },
+    "spec": {
+      "containers": [
+        {
+          "command": [
+            "/bin/bash",
+            "-ec",
+            "psql -d $POSTGRESQL_DATABASE -h psql -p $PSQL_SERVICE_PORT -U $POSTGRESQL_USER -c \"select 1\"\n"
+          ],
+          "env": [
+            {
+              "name": "POSTGRESQL_USER",
+              "value": "dperaza"
+            },
+            {
+              "name": "PGPASSWORD",
+              "value": "quebolasere"
+            },
+            {
+              "name": "POSTGRESQL_DATABASE",
+              "value": "helmrocks"
+            }
+          ],
+          "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7:latest",
+          "imagePullPolicy": "IfNotPresent",
+          "name": "psql-service-9j4d84rwsa-credentials-test",
+          "resources": {},
+          "securityContext": {
+            "capabilities": {
+              "drop": [
+                "MKNOD"
+              ]
+            }
+          },
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "volumeMounts": [
+            {
+              "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+              "name": "sa-with-anyuid-token-xzsvr",
+              "readOnly": true
+            }
+          ]
+        }
+      ],
+      "dnsPolicy": "ClusterFirst",
+      "enableServiceLinks": true,
+      "imagePullSecrets": [
+        {
+          "name": "sa-with-anyuid-dockercfg-5vl27"
+        }
+      ],
+      "nodeName": "crc-xl2km-master-0",
+      "preemptionPolicy": "PreemptLowerPriority",
+      "priority": 0,
+      "restartPolicy": "Never",
+      "schedulerName": "default-scheduler",
+      "securityContext": {
+        "seLinuxOptions": {
+          "level": "s0:c25,c5"
+        }
+      },
+      "serviceAccount": "sa-with-anyuid",
+      "serviceAccountName": "sa-with-anyuid",
+      "terminationGracePeriodSeconds": 30,
+      "tolerations": [
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        },
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        }
+      ],
+      "volumes": [
+        {
+          "name": "sa-with-anyuid-token-xzsvr",
+          "secret": {
+            "defaultMode": 420,
+            "secretName": "sa-with-anyuid-token-xzsvr"
+          }
+        }
+      ]
+    },
+    "status": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-14T12:34:32Z",
+          "reason": "PodCompleted",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-14T12:34:37Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-14T12:34:37Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "ContainersReady"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-14T12:34:32Z",
+          "status": "True",
+          "type": "PodScheduled"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "containerID": "cri-o://8a672b42b4e72c3a2e31ac93f39ae27d4f50050fc80c58b7d31a1517521b6925",
+          "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7:latest",
+          "imageID": "registry.access.redhat.com/rhscl/postgresql-10-rhel7@sha256:52a50e15a72989ee0ab84f2b4c0843439af099b2a78f4ef68bbe09e8b8e47989",
+          "lastState": {},
+          "name": "psql-service-9j4d84rwsa-credentials-test",
+          "ready": false,
+          "restartCount": 0,
+          "started": false,
+          "state": {
+            "terminated": {
+              "containerID": "cri-o://8a672b42b4e72c3a2e31ac93f39ae27d4f50050fc80c58b7d31a1517521b6925",
+              "exitCode": 0,
+              "finishedAt": "2021-05-14T12:34:36Z",
+              "reason": "Completed",
+              "startedAt": "2021-05-14T12:34:35Z"
+            }
+          }
+        }
+      ],
+      "hostIP": "192.168.126.11",
+      "phase": "Succeeded",
+      "podIP": "10.217.0.70",
+      "podIPs": [
+        {
+          "ip": "10.217.0.70"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2021-05-14T12:34:32Z"
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "annotations": {
+        "helm.sh/hook": "test-success",
+        "k8s.v1.cni.cncf.io/network-status": "[{\n    \"name\": \"\",\n    \"interface\": \"eth0\",\n    \"ips\": [\n        \"10.217.0.58\"\n    ],\n    \"default\": true,\n    \"dns\": {}\n}]",
+        "k8s.v1.cni.cncf.io/networks-status": "[{\n    \"name\": \"\",\n    \"interface\": \"eth0\",\n    \"ips\": [\n        \"10.217.0.58\"\n    ],\n    \"default\": true,\n    \"dns\": {}\n}]",
+        "openshift.io/scc": "anyuid"
+      },
+      "creationTimestamp": "2021-05-17T10:43:01Z",
+      "managedFields": [
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                ".": {},
+                "f:helm.sh/hook": {}
+              }
+            },
+            "f:spec": {
+              "f:containers": {
+                "k:{\"name\":\"psql-service-hg029q3b5f-credentials-test\"}": {
+                  ".": {},
+                  "f:command": {},
+                  "f:env": {
+                    ".": {},
+                    "k:{\"name\":\"PGPASSWORD\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    },
+                    "k:{\"name\":\"POSTGRESQL_DATABASE\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    },
+                    "k:{\"name\":\"POSTGRESQL_USER\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    }
+                  },
+                  "f:image": {},
+                  "f:imagePullPolicy": {},
+                  "f:name": {},
+                  "f:resources": {},
+                  "f:terminationMessagePath": {},
+                  "f:terminationMessagePolicy": {}
+                }
+              },
+              "f:dnsPolicy": {},
+              "f:enableServiceLinks": {},
+              "f:restartPolicy": {},
+              "f:schedulerName": {},
+              "f:securityContext": {
+                ".": {},
+                "f:seLinuxOptions": {
+                  "f:level": {}
+                }
+              },
+              "f:terminationGracePeriodSeconds": {}
+            }
+          },
+          "manager": "Go-http-client",
+          "operation": "Update",
+          "time": "2021-05-17T10:43:01Z"
+        },
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                "f:k8s.v1.cni.cncf.io/network-status": {},
+                "f:k8s.v1.cni.cncf.io/networks-status": {}
+              }
+            }
+          },
+          "manager": "multus",
+          "operation": "Update",
+          "time": "2021-05-17T10:43:03Z"
+        },
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:status": {
+              "f:conditions": {
+                "k:{\"type\":\"ContainersReady\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Initialized\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Ready\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              },
+              "f:containerStatuses": {},
+              "f:hostIP": {},
+              "f:phase": {},
+              "f:podIP": {},
+              "f:podIPs": {
+                ".": {},
+                "k:{\"ip\":\"10.217.0.58\"}": {
+                  ".": {},
+                  "f:ip": {}
+                }
+              },
+              "f:startTime": {}
+            }
+          },
+          "manager": "kubelet",
+          "operation": "Update",
+          "time": "2021-05-17T10:43:05Z"
+        }
+      ],
+      "name": "psql-service-hg029q3b5f-credentials-test",
+      "namespace": "davptest",
+      "resourceVersion": "1998731",
+      "selfLink": "/api/v1/namespaces/davptest/pods/psql-service-hg029q3b5f-credentials-test",
+      "uid": "16331636-8b48-4784-a381-96bfcbe4da79"
+    },
+    "spec": {
+      "containers": [
+        {
+          "command": [
+            "/bin/bash",
+            "-ec",
+            "psql -d $POSTGRESQL_DATABASE -h psql -p $PSQL_SERVICE_PORT -U $POSTGRESQL_USER -c \"select 1\"\n"
+          ],
+          "env": [
+            {
+              "name": "POSTGRESQL_USER",
+              "value": "dperaza"
+            },
+            {
+              "name": "PGPASSWORD",
+              "value": "quebolasere"
+            },
+            {
+              "name": "POSTGRESQL_DATABASE",
+              "value": "helmrocks"
+            }
+          ],
+          "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7:latest",
+          "imagePullPolicy": "IfNotPresent",
+          "name": "psql-service-hg029q3b5f-credentials-test",
+          "resources": {},
+          "securityContext": {
+            "capabilities": {
+              "drop": [
+                "MKNOD"
+              ]
+            }
+          },
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "volumeMounts": [
+            {
+              "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+              "name": "default-token-wnjwl",
+              "readOnly": true
+            }
+          ]
+        }
+      ],
+      "dnsPolicy": "ClusterFirst",
+      "enableServiceLinks": true,
+      "imagePullSecrets": [
+        {
+          "name": "default-dockercfg-6hbvr"
+        }
+      ],
+      "nodeName": "crc-xl2km-master-0",
+      "preemptionPolicy": "PreemptLowerPriority",
+      "priority": 0,
+      "restartPolicy": "Never",
+      "schedulerName": "default-scheduler",
+      "securityContext": {
+        "seLinuxOptions": {
+          "level": "s0:c25,c5"
+        }
+      },
+      "serviceAccount": "default",
+      "serviceAccountName": "default",
+      "terminationGracePeriodSeconds": 30,
+      "tolerations": [
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        },
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        }
+      ],
+      "volumes": [
+        {
+          "name": "default-token-wnjwl",
+          "secret": {
+            "defaultMode": 420,
+            "secretName": "default-token-wnjwl"
+          }
+        }
+      ]
+    },
+    "status": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-17T10:43:01Z",
+          "reason": "PodCompleted",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-17T10:43:01Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-17T10:43:01Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "ContainersReady"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-17T10:43:01Z",
+          "status": "True",
+          "type": "PodScheduled"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "containerID": "cri-o://77c42bd860cf713af13a9e05a30bd2e0639102b3c35cf37d3a8cf44983cbfe4b",
+          "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7:latest",
+          "imageID": "registry.access.redhat.com/rhscl/postgresql-10-rhel7@sha256:52a50e15a72989ee0ab84f2b4c0843439af099b2a78f4ef68bbe09e8b8e47989",
+          "lastState": {},
+          "name": "psql-service-hg029q3b5f-credentials-test",
+          "ready": false,
+          "restartCount": 0,
+          "started": false,
+          "state": {
+            "terminated": {
+              "containerID": "cri-o://77c42bd860cf713af13a9e05a30bd2e0639102b3c35cf37d3a8cf44983cbfe4b",
+              "exitCode": 0,
+              "finishedAt": "2021-05-17T10:43:04Z",
+              "reason": "Completed",
+              "startedAt": "2021-05-17T10:43:04Z"
+            }
+          }
+        }
+      ],
+      "hostIP": "192.168.126.11",
+      "phase": "Succeeded",
+      "podIP": "10.217.0.58",
+      "podIPs": [
+        {
+          "ip": "10.217.0.58"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2021-05-17T10:43:01Z"
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "annotations": {
+        "helm.sh/hook": "test-success",
+        "k8s.v1.cni.cncf.io/network-status": "[{\n    \"name\": \"\",\n    \"interface\": \"eth0\",\n    \"ips\": [\n        \"10.217.0.60\"\n    ],\n    \"default\": true,\n    \"dns\": {}\n}]",
+        "k8s.v1.cni.cncf.io/networks-status": "[{\n    \"name\": \"\",\n    \"interface\": \"eth0\",\n    \"ips\": [\n        \"10.217.0.60\"\n    ],\n    \"default\": true,\n    \"dns\": {}\n}]",
+        "openshift.io/scc": "anyuid"
+      },
+      "creationTimestamp": "2021-05-17T10:44:17Z",
+      "managedFields": [
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                ".": {},
+                "f:helm.sh/hook": {}
+              }
+            },
+            "f:spec": {
+              "f:containers": {
+                "k:{\"name\":\"psql-service-nrepusakap-credentials-test\"}": {
+                  ".": {},
+                  "f:command": {},
+                  "f:env": {
+                    ".": {},
+                    "k:{\"name\":\"PGPASSWORD\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    },
+                    "k:{\"name\":\"POSTGRESQL_DATABASE\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    },
+                    "k:{\"name\":\"POSTGRESQL_USER\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    }
+                  },
+                  "f:image": {},
+                  "f:imagePullPolicy": {},
+                  "f:name": {},
+                  "f:resources": {},
+                  "f:terminationMessagePath": {},
+                  "f:terminationMessagePolicy": {}
+                }
+              },
+              "f:dnsPolicy": {},
+              "f:enableServiceLinks": {},
+              "f:restartPolicy": {},
+              "f:schedulerName": {},
+              "f:securityContext": {
+                ".": {},
+                "f:seLinuxOptions": {
+                  "f:level": {}
+                }
+              },
+              "f:terminationGracePeriodSeconds": {}
+            }
+          },
+          "manager": "Go-http-client",
+          "operation": "Update",
+          "time": "2021-05-17T10:44:17Z"
+        },
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                "f:k8s.v1.cni.cncf.io/network-status": {},
+                "f:k8s.v1.cni.cncf.io/networks-status": {}
+              }
+            }
+          },
+          "manager": "multus",
+          "operation": "Update",
+          "time": "2021-05-17T10:44:19Z"
+        },
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:status": {
+              "f:conditions": {
+                "k:{\"type\":\"ContainersReady\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Initialized\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Ready\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              },
+              "f:containerStatuses": {},
+              "f:hostIP": {},
+              "f:phase": {},
+              "f:podIP": {},
+              "f:podIPs": {
+                ".": {},
+                "k:{\"ip\":\"10.217.0.60\"}": {
+                  ".": {},
+                  "f:ip": {}
+                }
+              },
+              "f:startTime": {}
+            }
+          },
+          "manager": "kubelet",
+          "operation": "Update",
+          "time": "2021-05-17T10:44:21Z"
+        }
+      ],
+      "name": "psql-service-nrepusakap-credentials-test",
+      "namespace": "davptest",
+      "resourceVersion": "1999024",
+      "selfLink": "/api/v1/namespaces/davptest/pods/psql-service-nrepusakap-credentials-test",
+      "uid": "58ed3eb5-f05d-44ed-a6b6-87d9695604e1"
+    },
+    "spec": {
+      "containers": [
+        {
+          "command": [
+            "/bin/bash",
+            "-ec",
+            "psql -d $POSTGRESQL_DATABASE -h psql -p $PSQL_SERVICE_PORT -U $POSTGRESQL_USER -c \"select 1\"\n"
+          ],
+          "env": [
+            {
+              "name": "POSTGRESQL_USER",
+              "value": "dperaza"
+            },
+            {
+              "name": "PGPASSWORD",
+              "value": "quebolasere"
+            },
+            {
+              "name": "POSTGRESQL_DATABASE",
+              "value": "helmrocks"
+            }
+          ],
+          "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7:latest",
+          "imagePullPolicy": "IfNotPresent",
+          "name": "psql-service-nrepusakap-credentials-test",
+          "resources": {},
+          "securityContext": {
+            "capabilities": {
+              "drop": [
+                "MKNOD"
+              ]
+            }
+          },
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "volumeMounts": [
+            {
+              "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+              "name": "default-token-wnjwl",
+              "readOnly": true
+            }
+          ]
+        }
+      ],
+      "dnsPolicy": "ClusterFirst",
+      "enableServiceLinks": true,
+      "imagePullSecrets": [
+        {
+          "name": "default-dockercfg-6hbvr"
+        }
+      ],
+      "nodeName": "crc-xl2km-master-0",
+      "preemptionPolicy": "PreemptLowerPriority",
+      "priority": 0,
+      "restartPolicy": "Never",
+      "schedulerName": "default-scheduler",
+      "securityContext": {
+        "seLinuxOptions": {
+          "level": "s0:c25,c5"
+        }
+      },
+      "serviceAccount": "default",
+      "serviceAccountName": "default",
+      "terminationGracePeriodSeconds": 30,
+      "tolerations": [
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        },
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        }
+      ],
+      "volumes": [
+        {
+          "name": "default-token-wnjwl",
+          "secret": {
+            "defaultMode": 420,
+            "secretName": "default-token-wnjwl"
+          }
+        }
+      ]
+    },
+    "status": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-17T10:44:17Z",
+          "reason": "PodCompleted",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-17T10:44:17Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-17T10:44:17Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "ContainersReady"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-17T10:44:17Z",
+          "status": "True",
+          "type": "PodScheduled"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "containerID": "cri-o://3a4f8a4e0b8a52f6e00f15ffa3f42061a288ba99e456a1e0eec1cdd5ffee47bd",
+          "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7:latest",
+          "imageID": "registry.access.redhat.com/rhscl/postgresql-10-rhel7@sha256:52a50e15a72989ee0ab84f2b4c0843439af099b2a78f4ef68bbe09e8b8e47989",
+          "lastState": {},
+          "name": "psql-service-nrepusakap-credentials-test",
+          "ready": false,
+          "restartCount": 0,
+          "started": false,
+          "state": {
+            "terminated": {
+              "containerID": "cri-o://3a4f8a4e0b8a52f6e00f15ffa3f42061a288ba99e456a1e0eec1cdd5ffee47bd",
+              "exitCode": 0,
+              "finishedAt": "2021-05-17T10:44:20Z",
+              "reason": "Completed",
+              "startedAt": "2021-05-17T10:44:20Z"
+            }
+          }
+        }
+      ],
+      "hostIP": "192.168.126.11",
+      "phase": "Succeeded",
+      "podIP": "10.217.0.60",
+      "podIPs": [
+        {
+          "ip": "10.217.0.60"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2021-05-17T10:44:17Z"
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "annotations": {
+        "helm.sh/hook": "test-success",
+        "k8s.v1.cni.cncf.io/network-status": "[{\n    \"name\": \"\",\n    \"interface\": \"eth0\",\n    \"ips\": [\n        \"10.217.0.208\"\n    ],\n    \"default\": true,\n    \"dns\": {}\n}]",
+        "k8s.v1.cni.cncf.io/networks-status": "[{\n    \"name\": \"\",\n    \"interface\": \"eth0\",\n    \"ips\": [\n        \"10.217.0.208\"\n    ],\n    \"default\": true,\n    \"dns\": {}\n}]",
+        "openshift.io/scc": "anyuid"
+      },
+      "creationTimestamp": "2021-05-13T17:23:27Z",
+      "managedFields": [
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                ".": {},
+                "f:helm.sh/hook": {}
+              }
+            },
+            "f:spec": {
+              "f:containers": {
+                "k:{\"name\":\"psql-service-qp53noc91t-credentials-test\"}": {
+                  ".": {},
+                  "f:command": {},
+                  "f:env": {
+                    ".": {},
+                    "k:{\"name\":\"PGPASSWORD\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    },
+                    "k:{\"name\":\"POSTGRESQL_DATABASE\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    },
+                    "k:{\"name\":\"POSTGRESQL_USER\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    }
+                  },
+                  "f:image": {},
+                  "f:imagePullPolicy": {},
+                  "f:name": {},
+                  "f:resources": {},
+                  "f:terminationMessagePath": {},
+                  "f:terminationMessagePolicy": {}
+                }
+              },
+              "f:dnsPolicy": {},
+              "f:enableServiceLinks": {},
+              "f:restartPolicy": {},
+              "f:schedulerName": {},
+              "f:securityContext": {
+                ".": {},
+                "f:seLinuxOptions": {
+                  "f:level": {}
+                }
+              },
+              "f:serviceAccount": {},
+              "f:serviceAccountName": {},
+              "f:terminationGracePeriodSeconds": {}
+            }
+          },
+          "manager": "Go-http-client",
+          "operation": "Update",
+          "time": "2021-05-13T17:23:27Z"
+        },
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                "f:k8s.v1.cni.cncf.io/network-status": {},
+                "f:k8s.v1.cni.cncf.io/networks-status": {}
+              }
+            }
+          },
+          "manager": "multus",
+          "operation": "Update",
+          "time": "2021-05-13T17:23:29Z"
+        },
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:status": {
+              "f:conditions": {
+                "k:{\"type\":\"ContainersReady\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Initialized\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Ready\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              },
+              "f:containerStatuses": {},
+              "f:hostIP": {},
+              "f:phase": {},
+              "f:podIP": {},
+              "f:podIPs": {
+                ".": {},
+                "k:{\"ip\":\"10.217.0.208\"}": {
+                  ".": {},
+                  "f:ip": {}
+                }
+              },
+              "f:startTime": {}
+            }
+          },
+          "manager": "kubelet",
+          "operation": "Update",
+          "time": "2021-05-13T17:23:31Z"
+        }
+      ],
+      "name": "psql-service-qp53noc91t-credentials-test",
+      "namespace": "davptest",
+      "resourceVersion": "1895217",
+      "selfLink": "/api/v1/namespaces/davptest/pods/psql-service-qp53noc91t-credentials-test",
+      "uid": "5ff63212-8fc0-4134-86e3-98c41701064d"
+    },
+    "spec": {
+      "containers": [
+        {
+          "command": [
+            "/bin/bash",
+            "-ec",
+            "psql -d $POSTGRESQL_DATABASE -h psql -p $PSQL_SERVICE_PORT -U $POSTGRESQL_USER -c \"select 1\"\n"
+          ],
+          "env": [
+            {
+              "name": "POSTGRESQL_USER",
+              "value": "dperaza"
+            },
+            {
+              "name": "PGPASSWORD",
+              "value": "quebolasere"
+            },
+            {
+              "name": "POSTGRESQL_DATABASE",
+              "value": "helmrocks"
+            }
+          ],
+          "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7:latest",
+          "imagePullPolicy": "IfNotPresent",
+          "name": "psql-service-qp53noc91t-credentials-test",
+          "resources": {},
+          "securityContext": {
+            "capabilities": {
+              "drop": [
+                "MKNOD"
+              ]
+            }
+          },
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "volumeMounts": [
+            {
+              "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+              "name": "sa-with-anyuid-token-xzsvr",
+              "readOnly": true
+            }
+          ]
+        }
+      ],
+      "dnsPolicy": "ClusterFirst",
+      "enableServiceLinks": true,
+      "imagePullSecrets": [
+        {
+          "name": "sa-with-anyuid-dockercfg-5vl27"
+        }
+      ],
+      "nodeName": "crc-xl2km-master-0",
+      "preemptionPolicy": "PreemptLowerPriority",
+      "priority": 0,
+      "restartPolicy": "Never",
+      "schedulerName": "default-scheduler",
+      "securityContext": {
+        "seLinuxOptions": {
+          "level": "s0:c25,c5"
+        }
+      },
+      "serviceAccount": "sa-with-anyuid",
+      "serviceAccountName": "sa-with-anyuid",
+      "terminationGracePeriodSeconds": 30,
+      "tolerations": [
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        },
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        }
+      ],
+      "volumes": [
+        {
+          "name": "sa-with-anyuid-token-xzsvr",
+          "secret": {
+            "defaultMode": 420,
+            "secretName": "sa-with-anyuid-token-xzsvr"
+          }
+        }
+      ]
+    },
+    "status": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-13T17:23:27Z",
+          "reason": "PodCompleted",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-13T17:23:27Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-13T17:23:27Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "ContainersReady"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-13T17:23:27Z",
+          "status": "True",
+          "type": "PodScheduled"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "containerID": "cri-o://5108bf15d3c3d2aad3e0baafb5b55355d076a44a305c4805e0366c1fecd4bab7",
+          "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7:latest",
+          "imageID": "registry.access.redhat.com/rhscl/postgresql-10-rhel7@sha256:52a50e15a72989ee0ab84f2b4c0843439af099b2a78f4ef68bbe09e8b8e47989",
+          "lastState": {},
+          "name": "psql-service-qp53noc91t-credentials-test",
+          "ready": false,
+          "restartCount": 0,
+          "started": false,
+          "state": {
+            "terminated": {
+              "containerID": "cri-o://5108bf15d3c3d2aad3e0baafb5b55355d076a44a305c4805e0366c1fecd4bab7",
+              "exitCode": 0,
+              "finishedAt": "2021-05-13T17:23:30Z",
+              "reason": "Completed",
+              "startedAt": "2021-05-13T17:23:30Z"
+            }
+          }
+        }
+      ],
+      "hostIP": "192.168.126.11",
+      "phase": "Succeeded",
+      "podIP": "10.217.0.208",
+      "podIPs": [
+        {
+          "ip": "10.217.0.208"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2021-05-13T17:23:27Z"
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "annotations": {
+        "helm.sh/hook": "test-success",
+        "k8s.v1.cni.cncf.io/network-status": "[{\n    \"name\": \"\",\n    \"interface\": \"eth0\",\n    \"ips\": [\n        \"10.217.0.97\"\n    ],\n    \"default\": true,\n    \"dns\": {}\n}]",
+        "k8s.v1.cni.cncf.io/networks-status": "[{\n    \"name\": \"\",\n    \"interface\": \"eth0\",\n    \"ips\": [\n        \"10.217.0.97\"\n    ],\n    \"default\": true,\n    \"dns\": {}\n}]",
+        "openshift.io/scc": "anyuid"
+      },
+      "creationTimestamp": "2021-05-13T12:38:15Z",
+      "managedFields": [
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                ".": {},
+                "f:helm.sh/hook": {}
+              }
+            },
+            "f:spec": {
+              "f:containers": {
+                "k:{\"name\":\"psql-service-vcwcj7a58u-credentials-test\"}": {
+                  ".": {},
+                  "f:command": {},
+                  "f:env": {
+                    ".": {},
+                    "k:{\"name\":\"PGPASSWORD\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    },
+                    "k:{\"name\":\"POSTGRESQL_DATABASE\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    },
+                    "k:{\"name\":\"POSTGRESQL_USER\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    }
+                  },
+                  "f:image": {},
+                  "f:imagePullPolicy": {},
+                  "f:name": {},
+                  "f:resources": {},
+                  "f:terminationMessagePath": {},
+                  "f:terminationMessagePolicy": {}
+                }
+              },
+              "f:dnsPolicy": {},
+              "f:enableServiceLinks": {},
+              "f:restartPolicy": {},
+              "f:schedulerName": {},
+              "f:securityContext": {
+                ".": {},
+                "f:seLinuxOptions": {
+                  "f:level": {}
+                }
+              },
+              "f:serviceAccount": {},
+              "f:serviceAccountName": {},
+              "f:terminationGracePeriodSeconds": {}
+            }
+          },
+          "manager": "Go-http-client",
+          "operation": "Update",
+          "time": "2021-05-13T12:38:15Z"
+        },
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                "f:k8s.v1.cni.cncf.io/network-status": {},
+                "f:k8s.v1.cni.cncf.io/networks-status": {}
+              }
+            }
+          },
+          "manager": "multus",
+          "operation": "Update",
+          "time": "2021-05-13T12:38:29Z"
+        },
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:status": {
+              "f:conditions": {
+                "k:{\"type\":\"ContainersReady\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Initialized\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Ready\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              },
+              "f:containerStatuses": {},
+              "f:hostIP": {},
+              "f:phase": {},
+              "f:podIP": {},
+              "f:podIPs": {
+                ".": {},
+                "k:{\"ip\":\"10.217.0.97\"}": {
+                  ".": {},
+                  "f:ip": {}
+                }
+              },
+              "f:startTime": {}
+            }
+          },
+          "manager": "kubelet",
+          "operation": "Update",
+          "time": "2021-05-13T12:38:30Z"
+        }
+      ],
+      "name": "psql-service-vcwcj7a58u-credentials-test",
+      "namespace": "davptest",
+      "resourceVersion": "1841448",
+      "selfLink": "/api/v1/namespaces/davptest/pods/psql-service-vcwcj7a58u-credentials-test",
+      "uid": "138fc430-75a2-48a8-b35f-fcef35aa8cfd"
+    },
+    "spec": {
+      "containers": [
+        {
+          "command": [
+            "/bin/bash",
+            "-ec",
+            "psql -d $POSTGRESQL_DATABASE -h psql -p $PSQL_SERVICE_PORT -U $POSTGRESQL_USER -c \"select 1\"\n"
+          ],
+          "env": [
+            {
+              "name": "POSTGRESQL_USER",
+              "value": "dperaza"
+            },
+            {
+              "name": "PGPASSWORD",
+              "value": "quebolasere"
+            },
+            {
+              "name": "POSTGRESQL_DATABASE",
+              "value": "helmrocks"
+            }
+          ],
+          "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7:latest",
+          "imagePullPolicy": "IfNotPresent",
+          "name": "psql-service-vcwcj7a58u-credentials-test",
+          "resources": {},
+          "securityContext": {
+            "capabilities": {
+              "drop": [
+                "MKNOD"
+              ]
+            }
+          },
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "volumeMounts": [
+            {
+              "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+              "name": "sa-with-anyuid-token-xzsvr",
+              "readOnly": true
+            }
+          ]
+        }
+      ],
+      "dnsPolicy": "ClusterFirst",
+      "enableServiceLinks": true,
+      "imagePullSecrets": [
+        {
+          "name": "sa-with-anyuid-dockercfg-5vl27"
+        }
+      ],
+      "nodeName": "crc-xl2km-master-0",
+      "preemptionPolicy": "PreemptLowerPriority",
+      "priority": 0,
+      "restartPolicy": "Never",
+      "schedulerName": "default-scheduler",
+      "securityContext": {
+        "seLinuxOptions": {
+          "level": "s0:c25,c5"
+        }
+      },
+      "serviceAccount": "sa-with-anyuid",
+      "serviceAccountName": "sa-with-anyuid",
+      "terminationGracePeriodSeconds": 30,
+      "tolerations": [
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        },
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        }
+      ],
+      "volumes": [
+        {
+          "name": "sa-with-anyuid-token-xzsvr",
+          "secret": {
+            "defaultMode": 420,
+            "secretName": "sa-with-anyuid-token-xzsvr"
+          }
+        }
+      ]
+    },
+    "status": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-13T12:38:27Z",
+          "reason": "PodCompleted",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-13T12:38:27Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-13T12:38:27Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "ContainersReady"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-13T12:38:15Z",
+          "status": "True",
+          "type": "PodScheduled"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "containerID": "cri-o://d3d530cb436eccfba173d80f06f5b466136e3b0967c88ee8e2d6f50d5f263fbf",
+          "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7:latest",
+          "imageID": "registry.access.redhat.com/rhscl/postgresql-10-rhel7@sha256:52a50e15a72989ee0ab84f2b4c0843439af099b2a78f4ef68bbe09e8b8e47989",
+          "lastState": {},
+          "name": "psql-service-vcwcj7a58u-credentials-test",
+          "ready": false,
+          "restartCount": 0,
+          "started": false,
+          "state": {
+            "terminated": {
+              "containerID": "cri-o://d3d530cb436eccfba173d80f06f5b466136e3b0967c88ee8e2d6f50d5f263fbf",
+              "exitCode": 0,
+              "finishedAt": "2021-05-13T12:38:30Z",
+              "reason": "Completed",
+              "startedAt": "2021-05-13T12:38:30Z"
+            }
+          }
+        }
+      ],
+      "hostIP": "192.168.126.11",
+      "phase": "Succeeded",
+      "podIP": "10.217.0.97",
+      "podIPs": [
+        {
+          "ip": "10.217.0.97"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2021-05-13T12:38:27Z"
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "annotations": {
+        "helm.sh/hook": "test-success",
+        "k8s.v1.cni.cncf.io/network-status": "[{\n    \"name\": \"\",\n    \"interface\": \"eth0\",\n    \"ips\": [\n        \"10.217.1.4\"\n    ],\n    \"default\": true,\n    \"dns\": {}\n}]",
+        "k8s.v1.cni.cncf.io/networks-status": "[{\n    \"name\": \"\",\n    \"interface\": \"eth0\",\n    \"ips\": [\n        \"10.217.1.4\"\n    ],\n    \"default\": true,\n    \"dns\": {}\n}]",
+        "openshift.io/scc": "anyuid"
+      },
+      "creationTimestamp": "2021-05-13T19:37:06Z",
+      "managedFields": [
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                ".": {},
+                "f:helm.sh/hook": {}
+              }
+            },
+            "f:spec": {
+              "f:containers": {
+                "k:{\"name\":\"psql-service-w2uk0sme47-credentials-test\"}": {
+                  ".": {},
+                  "f:command": {},
+                  "f:env": {
+                    ".": {},
+                    "k:{\"name\":\"PGPASSWORD\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    },
+                    "k:{\"name\":\"POSTGRESQL_DATABASE\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    },
+                    "k:{\"name\":\"POSTGRESQL_USER\"}": {
+                      ".": {},
+                      "f:name": {},
+                      "f:value": {}
+                    }
+                  },
+                  "f:image": {},
+                  "f:imagePullPolicy": {},
+                  "f:name": {},
+                  "f:resources": {},
+                  "f:terminationMessagePath": {},
+                  "f:terminationMessagePolicy": {}
+                }
+              },
+              "f:dnsPolicy": {},
+              "f:enableServiceLinks": {},
+              "f:restartPolicy": {},
+              "f:schedulerName": {},
+              "f:securityContext": {
+                ".": {},
+                "f:seLinuxOptions": {
+                  "f:level": {}
+                }
+              },
+              "f:serviceAccount": {},
+              "f:serviceAccountName": {},
+              "f:terminationGracePeriodSeconds": {}
+            }
+          },
+          "manager": "Go-http-client",
+          "operation": "Update",
+          "time": "2021-05-13T19:37:06Z"
+        },
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                "f:k8s.v1.cni.cncf.io/network-status": {},
+                "f:k8s.v1.cni.cncf.io/networks-status": {}
+              }
+            }
+          },
+          "manager": "multus",
+          "operation": "Update",
+          "time": "2021-05-13T19:37:23Z"
+        },
+        {
+          "apiVersion": "v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:status": {
+              "f:conditions": {
+                "k:{\"type\":\"ContainersReady\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Initialized\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Ready\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              },
+              "f:containerStatuses": {},
+              "f:hostIP": {},
+              "f:phase": {},
+              "f:podIP": {},
+              "f:podIPs": {
+                ".": {},
+                "k:{\"ip\":\"10.217.1.4\"}": {
+                  ".": {},
+                  "f:ip": {}
+                }
+              },
+              "f:startTime": {}
+            }
+          },
+          "manager": "kubelet",
+          "operation": "Update",
+          "time": "2021-05-13T19:37:25Z"
+        }
+      ],
+      "name": "psql-service-w2uk0sme47-credentials-test",
+      "namespace": "davptest",
+      "resourceVersion": "1921163",
+      "selfLink": "/api/v1/namespaces/davptest/pods/psql-service-w2uk0sme47-credentials-test",
+      "uid": "c28f4314-9075-4150-9677-c592aecc3179"
+    },
+    "spec": {
+      "containers": [
+        {
+          "command": [
+            "/bin/bash",
+            "-ec",
+            "psql -d $POSTGRESQL_DATABASE -h psql -p $PSQL_SERVICE_PORT -U $POSTGRESQL_USER -c \"select 1\"\n"
+          ],
+          "env": [
+            {
+              "name": "POSTGRESQL_USER",
+              "value": "dperaza"
+            },
+            {
+              "name": "PGPASSWORD",
+              "value": "quebolasere"
+            },
+            {
+              "name": "POSTGRESQL_DATABASE",
+              "value": "helmrocks"
+            }
+          ],
+          "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7:latest",
+          "imagePullPolicy": "IfNotPresent",
+          "name": "psql-service-w2uk0sme47-credentials-test",
+          "resources": {},
+          "securityContext": {
+            "capabilities": {
+              "drop": [
+                "MKNOD"
+              ]
+            }
+          },
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "volumeMounts": [
+            {
+              "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+              "name": "sa-with-anyuid-token-xzsvr",
+              "readOnly": true
+            }
+          ]
+        }
+      ],
+      "dnsPolicy": "ClusterFirst",
+      "enableServiceLinks": true,
+      "imagePullSecrets": [
+        {
+          "name": "sa-with-anyuid-dockercfg-5vl27"
+        }
+      ],
+      "nodeName": "crc-xl2km-master-0",
+      "preemptionPolicy": "PreemptLowerPriority",
+      "priority": 0,
+      "restartPolicy": "Never",
+      "schedulerName": "default-scheduler",
+      "securityContext": {
+        "seLinuxOptions": {
+          "level": "s0:c25,c5"
+        }
+      },
+      "serviceAccount": "sa-with-anyuid",
+      "serviceAccountName": "sa-with-anyuid",
+      "terminationGracePeriodSeconds": 30,
+      "tolerations": [
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        },
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        }
+      ],
+      "volumes": [
+        {
+          "name": "sa-with-anyuid-token-xzsvr",
+          "secret": {
+            "defaultMode": 420,
+            "secretName": "sa-with-anyuid-token-xzsvr"
+          }
+        }
+      ]
+    },
+    "status": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-13T19:37:21Z",
+          "reason": "PodCompleted",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-13T19:37:21Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-13T19:37:21Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "ContainersReady"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-05-13T19:37:06Z",
+          "status": "True",
+          "type": "PodScheduled"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "containerID": "cri-o://e15c477a26db5425d8c8a270647e02582416f00cb4a484bb47ff626d12856f20",
+          "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7:latest",
+          "imageID": "registry.access.redhat.com/rhscl/postgresql-10-rhel7@sha256:52a50e15a72989ee0ab84f2b4c0843439af099b2a78f4ef68bbe09e8b8e47989",
+          "lastState": {},
+          "name": "psql-service-w2uk0sme47-credentials-test",
+          "ready": false,
+          "restartCount": 0,
+          "started": false,
+          "state": {
+            "terminated": {
+              "containerID": "cri-o://e15c477a26db5425d8c8a270647e02582416f00cb4a484bb47ff626d12856f20",
+              "exitCode": 0,
+              "finishedAt": "2021-05-13T19:37:24Z",
+              "reason": "Completed",
+              "startedAt": "2021-05-13T19:37:24Z"
+            }
+          }
+        }
+      ],
+      "hostIP": "192.168.126.11",
+      "phase": "Succeeded",
+      "podIP": "10.217.1.4",
+      "podIPs": [
+        {
+          "ip": "10.217.1.4"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2021-05-13T19:37:21Z"
+    }
+  }
+]
