@@ -3,6 +3,7 @@
 set -e
 
 helm package ../ssm/chart/psql-service
+helm package ../ssm/chart/psql-service-with-values
 helm package ../ssm/chart/ssm-service
 
 helm repo index --url https://dperaza4dustbit.github.io/helm-chart/ .
