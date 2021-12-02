@@ -3,7 +3,7 @@ entries:
   ibm-mongodb-enterprise-helm:
   - apiVersion: v2
     appVersion: 4.4.0
-    created: "2021-12-02T18:06:18.226808-05:00"
+    created: "2021-12-02T18:11:28.097945-05:00"
     description: 'IBM Helm Chart to deploy MongoDB Enterprise on OpenShift Container
       Platform hosted on IBM Power systems.  Documentation For additional details
       regarding install parameters see here https://docs.mongodb.com/manual/administration/install-enterprise/  License
@@ -31,9 +31,9 @@ entries:
       charts.openshift.io/supportURL: https://github.com/dperaza4dustbit/helm-chart
     apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-12-02T18:06:18.228181-05:00"
+    created: "2021-12-02T18:11:28.099529-05:00"
     description: A Helm chart for a RedHat Certified PSQL
-    digest: 29e83a975b9b44880dac5acaf6e5addf6049b8d5fd67bfbcd6fe240a112cf2b1
+    digest: 75750bcf3fbd813d50d2c35616a00dc7d0fb5f8ea38e930957d127671e670086
     kubeVersion: '>=1.20.0'
     name: psql-service
     type: application
@@ -47,7 +47,7 @@ entries:
       charts.openshift.io/supportURL: https://github.com/dperaza4dustbit/helm-chart
     apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-12-02T18:06:18.230064-05:00"
+    created: "2021-12-02T18:11:28.10156-05:00"
     description: A Helm chart for a RedHat Certified PSQL
     digest: adb890b9c16fa53c71f3e97b819655ca7ead774e2b1002f174973c474a146011
     kubeVersion: 1.20.0
@@ -63,7 +63,7 @@ entries:
       charts.openshift.io/supportURL: https://github.com/dperaza4dustbit/helm-chart
     apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-12-02T18:06:18.229612-05:00"
+    created: "2021-12-02T18:11:28.101061-05:00"
     description: A Helm chart for a RedHat Certified PSQL
     digest: 02f47d3f42ea72386a48b8c0372a43f23018346e836894665d7e785ab9aa9f9f
     kubeVersion: 1.20.0
@@ -79,7 +79,7 @@ entries:
       charts.openshift.io/supportURL: https://github.com/dperaza4dustbit/helm-chart
     apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-12-02T18:06:18.229139-05:00"
+    created: "2021-12-02T18:11:28.100528-05:00"
     description: A Helm chart for a RedHat Certified PSQL
     digest: fedd8dd82d90882411fb9edcc930af10509af51c58eb4ce9b03cc797b6f3bac9
     kubeVersion: 1.20.0
@@ -95,7 +95,7 @@ entries:
       charts.openshift.io/supportURL: https://github.com/dperaza4dustbit/helm-chart
     apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-12-02T18:06:18.228649-05:00"
+    created: "2021-12-02T18:11:28.100038-05:00"
     description: A Helm chart for a RedHat Certified PSQL
     digest: ee6c02e91f68cc3f1ab4d6eca1f84d1c372bdfbb17fa90b148e4eae6f3e87a11
     kubeVersion: 1.20.0
@@ -111,7 +111,7 @@ entries:
       charts.openshift.io/supportURL: https://github.com/dperaza4dustbit/helm-chart
     apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-12-02T18:06:18.227711-05:00"
+    created: "2021-12-02T18:11:28.098952-05:00"
     description: A Helm chart for a RedHat Certified PSQL
     digest: ce63cde01ac0dbeab437d4a3579c1262845f88e13df4c4f01eeee49c71d1cc4b
     kubeVersion: '>=1.20.0'
@@ -119,6 +119,23 @@ entries:
     type: application
     urls:
     - https://dperaza4dustbit.github.io/helm-chart/psql-service-0.1.0.tgz
+    version: 0.1.0
+  psql-service-dep:
+  - annotations:
+      charts.openshift.io/archs: x86_64
+      charts.openshift.io/name: PSQL RedHat Demo Chart
+      charts.openshift.io/provider: RedHat
+      charts.openshift.io/supportURL: https://github.com/dperaza4dustbit/helm-chart
+    apiVersion: v2
+    appVersion: 10.0.0
+    created: "2021-12-02T18:11:28.102483-05:00"
+    description: A Helm chart for a RedHat Certified PSQL
+    digest: 2f3f71d48e09bb10680e7d28010bd4c77783ddc9e010f1b06b50caadc92fe0b4
+    kubeVersion: '>=1.20.0'
+    name: psql-service-dep
+    type: application
+    urls:
+    - https://dperaza4dustbit.github.io/helm-chart/psql-service-dep-0.1.0.tgz
     version: 0.1.0
   psql-service-with-values:
   - annotations:
@@ -128,9 +145,9 @@ entries:
       charts.openshift.io/supportURL: https://github.com/dperaza4dustbit/helm-chart
     apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-12-02T18:06:18.230571-05:00"
+    created: "2021-12-02T18:11:28.103741-05:00"
     description: A Helm chart for a RedHat Certified PSQL
-    digest: 84ac952b8decf587694e7e43f95a5b8ee74d6cca8b5a465cd453fd72fedf52b4
+    digest: 125f04e43d7eed85546feaf5b487c5070e7e0bb27f5d61958cd6e743df0b8164
     kubeVersion: 1.20.0
     name: psql-service-with-values
     type: application
@@ -139,7 +156,7 @@ entries:
     version: 0.1.0
   quarkus:
   - apiVersion: v2
-    created: "2021-12-02T18:06:18.231407-05:00"
+    created: "2021-12-02T18:11:28.104728-05:00"
     description: A Helm chart to build and deploy Quarkus applications
     digest: 1d6a88bc9d9a7dfa6eb02b9dc70242a0fc292e48da5ef922c3ec9e61ebad3dec
     keywords:
@@ -152,9 +169,9 @@ entries:
   ssm-service:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-02T18:06:18.232823-05:00"
+    created: "2021-12-02T18:11:28.106156-05:00"
     description: A Helm chart for a Software Security Module
-    digest: ce04fb1be7f3336c7df8982fbf12048e787659c6c99fb077c942cc1c395cdb3f
+    digest: 078d77b5b3e8e4d4c724fdb258e47e62b5444a16690bc0b03e1e1dfe199f8941
     name: ssm-service
     type: application
     urls:
@@ -162,7 +179,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-02T18:06:18.232393-05:00"
+    created: "2021-12-02T18:11:28.105714-05:00"
     description: A Helm chart for a Software Security Module
     digest: b8d0958b495a20ec0331f9ce73f9de474b53e61d465834daa6108fec311bb03d
     name: ssm-service
@@ -172,7 +189,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-02T18:06:18.231929-05:00"
+    created: "2021-12-02T18:11:28.105231-05:00"
     description: A Helm chart for a Software Security Module
     digest: e3148b068fe386807eede066d5a1d8c80421c511c3dec9402f4e4eedfa1050f1
     name: ssm-service
@@ -183,7 +200,7 @@ entries:
   vault:
   - apiVersion: v2
     appVersion: 1.7.2
-    created: "2021-12-02T18:06:18.235614-05:00"
+    created: "2021-12-02T18:11:28.108326-05:00"
     description: Official HashiCorp Vault Chart
     digest: 49524bccec4a9267efb8084a87f07b23b5f201abef6432c67eb91cd713e63d61
     home: https://www.vaultproject.io
@@ -208,7 +225,7 @@ entries:
     version: 0.12.11
   - apiVersion: v2
     appVersion: 1.7.2
-    created: "2021-12-02T18:06:18.24271-05:00"
+    created: "2021-12-02T18:11:28.11558-05:00"
     description: Official HashiCorp Vault Chart
     digest: dc81907997265fb9861c35a26d1a98c2a4bc651889a655d258a36dd3d2a616af
     home: https://www.vaultproject.io
@@ -233,7 +250,7 @@ entries:
     version: 0.12.9
   - apiVersion: v2
     appVersion: 1.7.2
-    created: "2021-12-02T18:06:18.239897-05:00"
+    created: "2021-12-02T18:11:28.113399-05:00"
     description: Official HashiCorp Vault Chart
     digest: 8c3598d2026c26a4410b81c3e513d0bd32946833e655cfedf4bf9f0f4b27c793
     home: https://www.vaultproject.io
@@ -258,7 +275,7 @@ entries:
     version: 0.12.7
   - apiVersion: v2
     appVersion: 1.7.2
-    created: "2021-12-02T18:06:18.237728-05:00"
+    created: "2021-12-02T18:11:28.11055-05:00"
     description: Official HashiCorp Vault Chart
     digest: a76713677f644b64136f6aec9c71cafef7e693a5a8df2be6b64f70af1ae70e50
     home: https://www.vaultproject.io
@@ -284,7 +301,7 @@ entries:
   wildfly:
   - apiVersion: v2
     appVersion: "23.0"
-    created: "2021-12-02T18:06:18.243859-05:00"
+    created: "2021-12-02T18:11:28.116822-05:00"
     dependencies:
     - name: wildfly-common
       repository: https://github.com/wildfly/wildfly-charts/releases/download/wildfly-common-1.3.0/wildfly-common-1.3.0.tgz
@@ -301,4 +318,4 @@ entries:
     urls:
     - https://dperaza4dustbit.github.io/helm-chart/wildfly-1.3.0.tgz
     version: 1.3.0
-generated: "2021-12-02T18:06:18.225716-05:00"
+generated: "2021-12-02T18:11:28.096743-05:00"
