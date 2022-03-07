@@ -6,6 +6,7 @@ helm package ../ssm/chart/psql-service
 helm package ../ssm/chart/psql-service-with-values
 helm package ../ssm/chart/ssm-service
 helm package ../ssm/chart/psql-service-dep
+helm package ../ssm/chart/psql-sed
 
 helm repo index --url https://dperaza4dustbit.github.io/helm-chart/ .
 
