@@ -1,3 +1,2 @@
-# helm-chart something new
-
+# helm-chart
 
